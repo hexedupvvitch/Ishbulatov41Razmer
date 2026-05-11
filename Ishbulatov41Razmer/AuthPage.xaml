@@ -1,0 +1,56 @@
+﻿<Page x:Class="Ishbulatov41Razmer.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Ishbulatov41Razmer"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="AuthPage" FontFamily="Comic Sans MS">
+
+    <Grid Background="#FFFFCC99">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Логин-->
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="150, 150, 0, 50" Orientation="Horizontal" >
+            <TextBlock Text="Логин " TextAlignment="Left" Width="200" FontSize="20" Height="30" />
+            <TextBox x:Name="TBoxlog" Width="250" FontSize="15" Height="40"/>
+        </StackPanel>
+
+        <!--Пароль-->
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="150, 250, 0, 50" Orientation="Horizontal" >
+            <TextBlock Text="Пароль " TextAlignment="Left" Width="200" FontSize="20" Height="30"/>
+            <PasswordBox x:Name="TBoxpass" Width="250" FontSize="15" Height="40"/>
+        </StackPanel>
+
+        <!--Капча-->
+        <StackPanel Name="CaptchaPanel" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed" Margin="0,20,0,0">
+            <TextBlock Name="captchaOneWord" FontSize="24" FontWeight="Bold" Margin="5,0"/>
+            <TextBlock Name="captchaTwoWord" FontSize="24" FontWeight="Bold" TextDecorations="Strikethrough" Margin="5,5,5,0"/>
+            <TextBlock Name="captchaThreeWord" FontSize="24" FontWeight="Bold" Margin="5,0"/>
+            <TextBlock Name="captchaFourWord" FontSize="24" FontWeight="Bold" TextDecorations="Strikethrough" Margin="5,10,5,0"/>
+        </StackPanel>
+
+        <!-- Поле ввода капчи -->
+        <StackPanel x:Name="CaptchaInputPanel" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed" Margin="0,70,0,0">
+            <TextBlock Text="Введите капчу:" FontSize="15" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="CaptchaTextBox" Width="100" FontSize="14" MaxLength="4"/>
+        </StackPanel>
+
+        <!--Кнопки-->
+        <Button Name="Guest" Content="Войти как гость" Click="Guest_Click" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="150,50,0,0" Width="200" Height="50" FontSize="16"/>
+        <Button Name="LogIn" Content="Войти" Click="LogIn_Click" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Margin="0,50,150,0" Width="200" Height="50" FontSize="16"/>
+
+    </Grid>
+</Page>
