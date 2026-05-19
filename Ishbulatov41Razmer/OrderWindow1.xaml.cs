@@ -141,10 +141,12 @@ namespace Ishbulatov41Razmer
         }
 
         private void UpdateOrderSummary()
-        {
-            CalculateTotal();
-            this.Title = string.Format("Заказ | Сумма: {0:N2} руб. | Скидка: {1:N2} руб.", totalSum, totalDiscount);
-        }
+            {
+                CalculateTotal();
+
+                Cost.Text = $"{totalSum:N2} руб.";
+                DiscountTB.Text = $"{totalDiscount:N2} руб.";
+            }
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
